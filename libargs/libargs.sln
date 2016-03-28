@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libargs", "libargs\libargs.vcxproj", "{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Debug|ARM.Build.0 = Debug|ARM
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Debug|x64.ActiveCfg = Debug|x64
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Debug|x64.Build.0 = Debug|x64
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Debug|x86.ActiveCfg = Debug|Win32
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Debug|x86.Build.0 = Debug|Win32
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Release|ARM.ActiveCfg = Release|ARM
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Release|ARM.Build.0 = Release|ARM
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Release|x64.ActiveCfg = Release|x64
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Release|x64.Build.0 = Release|x64
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Release|x86.ActiveCfg = Release|Win32
+		{CA0B16E1-7917-4247-A4E8-A4F004BA8EFF}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
