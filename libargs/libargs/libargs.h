@@ -5,6 +5,9 @@
 
 using namespace std;
 
+// Simple macro to tell if some option is written twice
+#define CONTAINS(x, y) (std::find(x.begin(), x.end(), y) != x.end())
+
 /*
 * Simple command line parser.  Will try to read the arguments combo passed by the command line.
 * It assumes it will get first some options preceded by a '-' character, either in the form

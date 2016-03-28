@@ -8,10 +8,6 @@
 
 using namespace std;
 
-// Simple macro to tell if some option is written twice
-#define CONTAINS(x, y) (std::find(x.begin(), x.end(), y) != x.end())
-
-
 // Constructor: parses the command line
 ArgumentsParser::ArgumentsParser(int argc, char* theArgv[], list<string> theOptions) {
 	for (list<string>::iterator it = theOptions.begin(); it != theOptions.end();) {
