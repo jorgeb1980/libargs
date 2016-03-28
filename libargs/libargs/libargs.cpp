@@ -53,12 +53,12 @@ ArgumentsParser::ArgumentsParser(int argc, char* theArgv[], list<string> theOpti
 
 // Prints the arguments in the console
 void ArgumentsParser::listArguments() {
-	cout << "\Options:\n";
+	cout << "Options:\n";
 	for (list<string>::iterator it = this->options.begin(); it != this->options.end(); it++) {
 		string arg = *it;
 		cout << (*it).c_str() << "\n";
 	}
-	cout << "\Arguments:\n";
+	cout << "Arguments:\n";
 	for (list<string>::iterator itF = args.begin(); itF != args.end(); itF++) {
 		cout << *itF << "\n";
 	}
