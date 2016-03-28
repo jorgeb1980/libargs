@@ -10,7 +10,7 @@ using namespace std;
 
 // Constructor: parses the command line
 ArgumentsParser::ArgumentsParser(int argc, char* theArgv[], list<string> theOptions) {
-	for (list<string>::iterator it = theOptions.begin(); it != theOptions.end();) {
+	for (list<string>::iterator it = theOptions.begin(); it != theOptions.end(); it++) {
 		this->acceptableOptions.insert(*it);
 	}
 	// First, parsing options
@@ -27,9 +27,11 @@ ArgumentsParser::ArgumentsParser(int argc, char* theArgv[], list<string> theOpti
 			if (parsingOptions && s[0] == '-') {
 				string tmp = s.substr(1, string::npos);
 				for (size_t i = 0; i < tmp.length(); i++) {
-					string tmp = string(&tmp[i], 1);
-					if (!CONTAINS(options, tmp)) {
-						options.push_back(tmp);
+					string thestr = string(&tmp[i], 1);
+					if (!CONTAINS(options, thestr)) {
+						if (CONTAINS(acceptableOptions, thestr)) {
+							options.push_back(thestr);
+						}
 					}
 				}
 			}
