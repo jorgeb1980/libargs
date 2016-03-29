@@ -5,8 +5,52 @@
 #include <list>
 #include <set>
 #include <iostream>
+#include <windows.h>
+#include <wchar.h>
+#include <memory>
 
 using namespace std;
+
+// This funcion expands a file name following simple '*' rules
+// Returns a list of names of files, relative to fullPath, according to the pattern
+list<wstring>* expand(wstring& pattern, TCHAR *fullPath) {
+	list<wstring>* ret = new list<wstring>;
+	
+	// Own file data
+	WIN32_FIND_DATA searchData;
+	// Clean the result
+	memset(&searchData, 0, sizeof(WIN32_FIND_DATA));
+
+	wstring wpath(fullPath);
+	wpath.append(TEXT("\\"));
+	wpath.append(pattern);
+
+	HANDLE handle = FindFirstFileEx(
+		wpath.c_str(), 
+		FindExInfoStandard, 
+		&searchData, 
+		FindExSearchNameMatch, 
+		NULL, 
+		0);
+
+	while (handle != INVALID_HANDLE_VALUE) {
+		if (_tcscmp(searchData.cFileName, TEXT(".")) != 0 && _tcscmp(searchData.cFileName, TEXT("..")) != 0) {
+			wstring ws(fullPath);
+			ws.append(TEXT("\\"));
+			ws.append(searchData.cFileName);
+			ret->push_back(ws);
+		}
+		int next = FindNextFile(handle, &searchData);
+		if (next == FALSE)
+			break;
+	}
+
+
+	//Close the handle after use or memory/resource leak
+	FindClose(handle);
+
+	return ret;
+}
 
 // Constructor: parses the command line
 ArgumentsParser::ArgumentsParser(int argc, char* theArgv[], list<string> theOptions) {

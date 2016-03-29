@@ -2,11 +2,16 @@
 
 #include <list>
 #include <set>
+#include <tchar.h>
 
 using namespace std;
 
 // Simple macro to tell if some option is written twice
 #define CONTAINS(x, y) (std::find(x.begin(), x.end(), y) != x.end())
+
+// This funcion expands a file name following simple '*' rules
+// Returns a list of names of files, relative to fullPath, according to the pattern
+list<wstring>* expand(wstring& pattern, TCHAR *fullPath);
 
 /*
 * Simple command line parser.  Will try to read the arguments combo passed by the command line.
